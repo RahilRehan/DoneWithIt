@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import AppText from '../components/AppText';
 
 function Welcome() {
     return (
@@ -9,7 +10,7 @@ function Welcome() {
         
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("../assets/logo-red.png")}/>
-            <Text>Sell what you don't need</Text>
+            <AppText>Sell what you don't need</AppText>
         </View>
         
         <View style={styles.loginButton}></View> 
