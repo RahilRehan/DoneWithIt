@@ -2,14 +2,19 @@ import AppButton from './app/components/AppButton';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import Welcome from './app/screens/Welcome';
 import { View } from 'react-native';
+import Card from './app/components/Card';
 
 export default function App() {
   return (
-    <Welcome/>
+    // <Welcome/>
     // <ViewImageScreen/>
 
-    // <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-    //     <AppButton title="Click me!" onPress={() => console.log("PRESSED")}/>
-    // </View>
+    <View style={{flex: 1, backgroundColor: "#fcf4", paddingTop: 100, padding: 20}}>
+        <Card
+            image={require("./app/assets/jacket.jpg")}
+            title="Red Jacket for sale"
+            subTitle="$100"
+        />
+    </View>
   );
 }

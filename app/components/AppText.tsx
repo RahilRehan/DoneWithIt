@@ -1,9 +1,13 @@
 import React, {PropsWithChildren} from 'react';
 import { StyleSheet, Platform, Text } from "react-native"
 
-const AppText: React.FC<PropsWithChildren> = (props) => {
+interface Props extends PropsWithChildren{
+    style: {[key: string]: any}
+}
+
+const AppText: React.FC<Props> = ({children, style}) => {
     return (
-        <Text style={styles.text}>{props?.children}</Text>
+        <Text style={[styles.text, style]}>{children}</Text>
     );
 }
 
@@ -25,14 +29,13 @@ const AppText: React.FC<PropsWithChildren> = (props) => {
 
 const styles = StyleSheet.create({
     text: {
-        color: "tomato",
         ...Platform.select({
             ios: {
-                fontSize: 20,
+                fontSize: 18,
                 fontFamily: "Avenir"
             },
             android: {
-                fontSize: 20 ,
+                fontSize: 18,
                 fontFamily: "Roboto"
             }
         })
