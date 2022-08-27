@@ -8,7 +8,7 @@ import ListingDetails from './app/screens/ListingDetails';
 export default function App() {
   return (
     // <Welcome/>
-    // <ViewImageScreen/>
+    <ViewImageScreen/>
 
     // <View style={{flex: 1, backgroundColor: "#fcf4", paddingTop: 100, padding: 20}}>
     //     <Card
@@ -18,6 +18,6 @@ export default function App() {
     //     />
     // </View>
 
-    <ListingDetails image={require("./app/assets/jacket.jpg")}/>
+    // <ListingDetails image={require("./app/assets/jacket.jpg")}/>
   );
 }
