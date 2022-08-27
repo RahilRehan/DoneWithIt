@@ -4,11 +4,12 @@ import Welcome from './app/screens/Welcome';
 import { View } from 'react-native';
 import Card from './app/components/Card';
 import ListingDetails from './app/screens/ListingDetails';
+import Messages from './app/screens/Messages';
 
 export default function App() {
   return (
     // <Welcome/>
-    <ViewImageScreen/>
+    // <ViewImageScreen/>
 
     // <View style={{flex: 1, backgroundColor: "#fcf4", paddingTop: 100, padding: 20}}>
     //     <Card
@@ -19,5 +20,6 @@ export default function App() {
     // </View>
 
     // <ListingDetails image={require("./app/assets/jacket.jpg")}/>
+    <Messages />
   );
 }

@@ -1,28 +1,36 @@
 import React from 'react';
-import { Image, ImageRequireSource, View, StyleSheet } from 'react-native';
+import { Image, ImageRequireSource, View, StyleSheet, TouchableOpacity, TouchableHighlight } from 'react-native';
+import colors from '../config/colors';
 import AppText from './AppText';
 
 interface Props{
     image: ImageRequireSource,
     title: string,
-    subTitle: string
+    subTitle: string,
+    onPress: () => void
 }
 
-const ListItem: React.FC<Props> = ({image, title, subTitle}) => {
+const ListItem: React.FC<Props> = ({image, title, subTitle, onPress}) => {
     return (
-        <View style={styles.listContainer}>
-            <Image source={image} style={styles.image}/>
-            <View style={styles.detailsContainer}>
-                <AppText style={styles.title}>{title}</AppText>
-                <AppText style={styles.subTitle}>{subTitle}</AppText>
+        <TouchableHighlight
+            underlayColor={colors.light}
+            onPress={onPress}
+        >
+            <View style={styles.listContainer}>
+                <Image source={image} style={styles.image}/>
+                <View style={styles.detailsContainer}>
+                    <AppText style={styles.title}>{title}</AppText>
+                    <AppText style={styles.subTitle}>{subTitle}</AppText>
+                </View>
             </View>
-        </View>
+        </TouchableHighlight>
     );
 }
 
 const styles = StyleSheet.create({
     listContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        padding: 15
     },
     image: {
         height: 70,
