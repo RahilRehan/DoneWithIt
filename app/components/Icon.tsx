@@ -4,17 +4,17 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import colors from '../config/colors'
 
 interface Props {
-	size: number
-	name: string
-	backgroundColor: string
-	iconColor: string
+	size?: number
+	name: any
+	backgroundColor?: string
+	iconColor?: string
 }
 
 const Icon: React.FC<Props> = ({
 	size = 40,
 	name,
 	backgroundColor = colors.black,
-	iconColor,
+	iconColor = colors.white,
 }) => {
 	return (
 		<View

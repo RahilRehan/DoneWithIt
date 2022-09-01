@@ -6,6 +6,7 @@ import {
 	StyleSheet,
 	TouchableOpacity,
 	TouchableHighlight,
+	ImageSourcePropType,
 } from 'react-native'
 import colors from '../config/colors'
 import AppText from './AppText'
@@ -14,11 +15,12 @@ import { Animated } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 interface Props {
-	image: ImageRequireSource
+	image?: ImageSourcePropType
 	title: string
-	subTitle: string
-	onPress: () => void
-	renderRightActions: (a: any, b: any) => React.ReactNode
+	subTitle?: string
+	onPress?: () => void
+	renderRightActions?: (a: any, b: any) => React.ReactNode
+	ImageComponent: React.ReactNode
 }
 
 const ListItem: React.FC<Props> = ({
@@ -27,6 +29,7 @@ const ListItem: React.FC<Props> = ({
 	subTitle,
 	onPress,
 	renderRightActions,
+	ImageComponent,
 }) => {
 	return (
 		<GestureHandlerRootView>
@@ -36,12 +39,15 @@ const ListItem: React.FC<Props> = ({
 					onPress={onPress}
 				>
 					<View style={styles.listContainer}>
-						<Image source={image} style={styles.image} />
+						{image && <Image source={image} style={styles.image} />}
+						{ImageComponent}
 						<View style={styles.detailsContainer}>
 							<AppText style={styles.title}>{title}</AppText>
-							<AppText style={styles.subTitle}>
-								{subTitle}
-							</AppText>
+							{subTitle && (
+								<AppText style={styles.subTitle}>
+									{subTitle}
+								</AppText>
+							)}
 						</View>
 					</View>
 				</TouchableHighlight>
@@ -59,7 +65,6 @@ const styles = StyleSheet.create({
 		height: 70,
 		width: 70,
 		borderRadius: 50,
-		marginRight: 10,
 	},
 	title: {
 		fontWeight: '500',
@@ -68,6 +73,7 @@ const styles = StyleSheet.create({
 		color: '#6e6969',
 	},
 	detailsContainer: {
+		marginLeft: 10,
 		justifyContent: 'center',
 	},
 })

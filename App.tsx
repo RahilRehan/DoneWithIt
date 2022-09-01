@@ -7,6 +7,7 @@ import ListingDetails from './app/screens/ListingDetails'
 import Messages from './app/screens/Messages'
 import Icon from './app/components/Icon'
 import Screen from './app/components/Screen'
+import ListItem from './app/components/ListItem'
 
 export default function App() {
 	return (
@@ -26,11 +27,9 @@ export default function App() {
 		// <Messages />
 
 		<Screen>
-			<Icon
-				name="email"
-				size={30}
-				backgroundColor="red"
-				iconColor="white"
+			<ListItem
+				title="This is Title"
+				ImageComponent={<Icon name="email" />}
 			/>
 		</Screen>
 	)
