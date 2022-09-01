@@ -1,7 +1,7 @@
 import AppButton from './app/components/AppButton'
 import ViewImageScreen from './app/screens/ViewImage'
 import Welcome from './app/screens/Welcome'
-import { View } from 'react-native'
+import { TextInput, View } from 'react-native'
 import Card from './app/components/Card'
 import ListingDetails from './app/screens/ListingDetails'
 import Messages from './app/screens/Messages'
@@ -10,6 +10,8 @@ import Screen from './app/components/Screen'
 import ListItem from './app/components/ListItem'
 import Account from './app/screens/Account'
 import Listings from './app/screens/Listings'
+import { useState } from 'react'
+import AppTextInput from './app/components/AppTextInput'
 
 export default function App() {
 	return (
@@ -30,6 +32,10 @@ export default function App() {
 
 		// <Account />
 
-		<Listings />
+		// <Listings />
+
+		<Screen>
+			<AppTextInput icon="email" placeholder="Email" />
+		</Screen>
 	)
 }
