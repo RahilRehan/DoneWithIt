@@ -9,6 +9,7 @@ import Icon from './app/components/Icon'
 import Screen from './app/components/Screen'
 import ListItem from './app/components/ListItem'
 import Account from './app/screens/Account'
+import Listings from './app/screens/Listings'
 
 export default function App() {
 	return (
@@ -27,6 +28,8 @@ export default function App() {
 
 		// <Messages />
 
-		<Account />
+		// <Account />
+
+		<Listings />
 	)
 }
