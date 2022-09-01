@@ -8,6 +8,7 @@ import Messages from './app/screens/Messages'
 import Icon from './app/components/Icon'
 import Screen from './app/components/Screen'
 import ListItem from './app/components/ListItem'
+import Account from './app/screens/Account'
 
 export default function App() {
 	return (
@@ -26,11 +27,6 @@ export default function App() {
 
 		// <Messages />
 
-		<Screen>
-			<ListItem
-				title="This is Title"
-				ImageComponent={<Icon name="email" />}
-			/>
-		</Screen>
+		<Account />
 	)
 }
