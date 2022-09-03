@@ -4,10 +4,11 @@ import { StyleSheet } from 'react-native'
 
 interface Props {
 	error: string | undefined
+	visible: boolean | undefined
 }
 
-const ErrorMessage: React.FC<Props> = ({ error }) => {
-	if (!error) return null
+const ErrorMessage: React.FC<Props> = ({ error, visible }) => {
+	if (!error || !visible) return null
 
 	return <AppText style={styles.error}>{error}</AppText>
 }
