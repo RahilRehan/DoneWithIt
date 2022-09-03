@@ -1,12 +1,9 @@
-import React from 'react'
-import { Formik } from 'formik'
+import React, { Component } from 'react'
 import * as Yup from 'yup'
 import { Image, StyleSheet } from 'react-native'
 
 import Screen from '../components/Screen'
-import AppFormFields from '../components/AppFormFields'
-import SubmitButton from '../components/SubmitButton'
-import AppForm from '../components/AppForm'
+import { AppForm, AppFormFields, SubmitButton } from '../components/forms'
 
 interface onSubmitLoginType {
 	email: string
@@ -29,7 +26,7 @@ const Login = () => {
 			<AppForm
 				initialValues={{ email: '', password: '' }}
 				onSubmit={(values: onSubmitLoginType) => console.log(values)}
-				validationSchema={validationScheme}
+				validationScheme={validationScheme}
 			>
 				<AppFormFields
 					name="email"
