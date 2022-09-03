@@ -1,11 +1,12 @@
 import React from 'react'
-import { Image, StyleSheet } from 'react-native'
-import AppButton from '../components/AppButton'
-import AppTextInput from '../components/AppTextInput'
-import Screen from '../components/Screen'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import AppText from '../components/AppText'
+import { Image, StyleSheet } from 'react-native'
+
+import Screen from '../components/Screen'
+import AppButton from '../components/AppButton'
+import AppTextInput from '../components/AppTextInput'
+import ErrorMessage from '../components/ErrorMessage'
 
 const validationScheme = Yup.object().shape({
 	email: Yup.string().required().email().label('Email'),
@@ -36,9 +37,7 @@ const Login = () => {
 							textContentType="emailAdress"
 							onChangeText={handleChange('email')}
 						/>
-						<AppText style={{ color: 'red' }}>
-							{errors.email}
-						</AppText>
+						<ErrorMessage error={errors.email} />
 
 						<AppTextInput
 							autoCapitalize="none"
@@ -49,9 +48,7 @@ const Login = () => {
 							secureTextEntry
 							onChangeText={handleChange('password')}
 						/>
-						<AppText style={{ color: 'red' }}>
-							{errors.password}
-						</AppText>
+						<ErrorMessage error={errors.password} />
 
 						<AppButton title="Login" onPress={handleSubmit} />
 					</>
