@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react'
 import { StyleSheet, Platform, Text } from 'react-native'
 import defaultStyles from '../config/styles'
 interface Props extends PropsWithChildren {
-	style: { [key: string]: any }
+	style?: { [key: string]: any }
 }
 
 const AppText: React.FC<Props> = ({ children, style }) => {

@@ -12,6 +12,7 @@ import Account from './app/screens/Account'
 import Listings from './app/screens/Listings'
 import { useState } from 'react'
 import AppTextInput from './app/components/AppTextInput'
+import AppPicker from './app/components/AppPicker'
 
 export default function App() {
 	return (
@@ -35,6 +36,7 @@ export default function App() {
 		// <Listings />
 
 		<Screen>
+			<AppPicker icon="apps" placeholder="Categories" />
 			<AppTextInput icon="email" placeholder="Email" />
 		</Screen>
 	)
