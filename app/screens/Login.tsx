@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import React from 'react'
+import { Image, StyleSheet } from 'react-native'
 import AppButton from '../components/AppButton'
 import AppTextInput from '../components/AppTextInput'
 import Screen from '../components/Screen'
+import { Formik } from 'formik'
 
 const Login = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-
 	return (
 		<Screen style={styles.container}>
 			<Image
@@ -15,30 +13,36 @@ const Login = () => {
 				style={styles.logo}
 			/>
 
-			<AppTextInput
-				autoCapitalize="none"
-				autoCorrect="false"
-				icon="email"
-				keyboardType="email-address"
-				placeholder="Email"
-				textContentType="emailAdress"
-				onChangeText={(text: string) => setEmail(text)}
-			/>
+			<Formik
+				initialValues={{ email: '', password: '' }}
+				onSubmit={(values) => console.log(values)}
+			>
+				{({ handleChange, handleSubmit }) => (
+					<>
+						<AppTextInput
+							autoCapitalize="none"
+							autoCorrect="false"
+							icon="email"
+							keyboardType="email-address"
+							placeholder="Email"
+							textContentType="emailAdress"
+							onChangeText={handleChange('email')}
+						/>
 
-			<AppTextInput
-				autoCapitalize="none"
-				autoCorrect={false}
-				icon="lock"
-				placeholder="Password"
-				textContentType="password"
-				secureTextEntry
-				onChangeText={(text: string) => setPassword(text)}
-			/>
+						<AppTextInput
+							autoCapitalize="none"
+							autoCorrect={false}
+							icon="lock"
+							placeholder="Password"
+							textContentType="password"
+							secureTextEntry
+							onChangeText={handleChange('password')}
+						/>
 
-			<AppButton
-				title="Login"
-				onPress={() => console.log(email, password)}
-			/>
+						<AppButton title="Login" onPress={handleSubmit} />
+					</>
+				)}
+			</Formik>
 		</Screen>
 	)
 }
