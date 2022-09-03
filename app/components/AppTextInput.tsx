@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, View, StyleSheet, Platform } from 'react-native'
+import { TextInput, View, StyleSheet } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import defaultStyles from '../config/styles'
 
@@ -19,7 +19,7 @@ const AppTextInput: React.FC<Props> = ({ icon, ...rest }) => {
 					color="grey"
 				/>
 			)}
-			<TextInput style={styles.textInput} {...rest} />
+			<TextInput style={styles.textInput} {...rest} defaultValue="" />
 		</View>
 	)
 }
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 		padding: 15,
 		marginVertical: 10,
 	},
-	textInput: defaultStyles.text,
+	textInput: { ...defaultStyles.text, width: '100%' },
 	icon: {
 		marginRight: 10,
 	},

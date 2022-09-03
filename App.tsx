@@ -1,7 +1,7 @@
 import AppButton from './app/components/AppButton'
 import ViewImageScreen from './app/screens/ViewImage'
 import Welcome from './app/screens/Welcome'
-import { TextInput, View } from 'react-native'
+import { Text, TextInput, View } from 'react-native'
 import Card from './app/components/Card'
 import ListingDetails from './app/screens/ListingDetails'
 import Messages from './app/screens/Messages'
@@ -13,6 +13,7 @@ import Listings from './app/screens/Listings'
 import { useState } from 'react'
 import AppTextInput from './app/components/AppTextInput'
 import AppPicker from './app/components/AppPicker'
+import Login from './app/screens/Login'
 
 interface categoryType {
 	label: string
@@ -28,7 +29,7 @@ const categories: categoryType[] = [
 export { categoryType }
 
 export default function App() {
-	const [category, setCategory] = useState(categories[0])
+	// const [category, setCategory] = useState(categories[0])
 
 	return (
 		// <Welcome/>
@@ -50,15 +51,17 @@ export default function App() {
 
 		// <Listings />
 
-		<Screen>
-			<AppPicker
-				items={categories}
-				selectedItem={category}
-				onSelectItem={(item: categoryType) => setCategory(item)}
-				icon="apps"
-				placeholder="Categories"
-			/>
-			<AppTextInput icon="email" placeholder="Email" />
-		</Screen>
+		// <Screen>
+		// 	<AppPicker
+		// 		items={categories}
+		// 		selectedItem={category}
+		// 		onSelectItem={(item: categoryType) => setCategory(item)}
+		// 		icon="apps"
+		// 		placeholder="Categories"
+		// 	/>
+		// 	<AppTextInput icon="email" placeholder="Email" />
+		// </Screen>
+
+		<Login />
 	)
 }
