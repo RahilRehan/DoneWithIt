@@ -9,11 +9,11 @@ import PickerItem from './PickerItem'
 import { categoryType } from '../../App'
 
 interface Props {
-	icon: any
+	icon?: any
 	[x: string]: any
 	placeholder: string
 	selectedItem: categoryType
-	onSelectItem: (item: categoryType) => void
+	onSelectItem: (item: any) => void
 }
 
 const AppPicker: React.FC<Props> = ({

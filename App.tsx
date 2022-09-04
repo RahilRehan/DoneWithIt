@@ -1,7 +1,7 @@
 import AppButton from './app/components/AppButton'
 import ViewImageScreen from './app/screens/ViewImage'
 import Welcome from './app/screens/Welcome'
-import { Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Card from './app/components/Card'
 import ListingDetails from './app/screens/ListingDetails'
 import Messages from './app/screens/Messages'
@@ -14,6 +14,7 @@ import { useState } from 'react'
 import AppTextInput from './app/components/AppTextInput'
 import AppPicker from './app/components/AppPicker'
 import Login from './app/screens/Login'
+import ListingEdit from './app/screens/ListingEdit'
 
 interface categoryType {
 	label: string
@@ -62,6 +63,7 @@ export default function App() {
 		// 	<AppTextInput icon="email" placeholder="Email" />
 		// </Screen>
 
-		<Login />
+		// <Login />
+		<ListingEdit />
 	)
 }
