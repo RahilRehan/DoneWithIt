@@ -73,7 +73,7 @@ const AppPicker: React.FC<Props> = ({
 							<PickerItemComponent
 								item={item}
 								onPress={() => {
-									onSelectItem(item)
+									onSelectItem(item.title)
 									setModalVisible(false)
 								}}
 							/>
