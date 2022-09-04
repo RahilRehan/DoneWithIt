@@ -16,7 +16,8 @@ const initialMessages: messageInterface[] = [
 	{
 		id: 1,
 		title: 'T1',
-		description: 'D1',
+		description:
+			'lorem In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relyingLorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.',
 		image: require('../assets/mosh.jpg'),
 	},
 	{

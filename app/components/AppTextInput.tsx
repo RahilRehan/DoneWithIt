@@ -5,12 +5,13 @@ import defaultStyles from '../config/styles'
 
 interface Props {
 	icon: any
+	width: number | string
 	[x: string]: any
 }
 
-const AppTextInput: React.FC<Props> = ({ icon, ...rest }) => {
+const AppTextInput: React.FC<Props> = ({ icon, width = '100%', ...rest }) => {
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, { width }]}>
 			{icon && (
 				<MaterialCommunityIcons
 					style={styles.icon}

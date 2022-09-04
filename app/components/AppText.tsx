@@ -3,10 +3,15 @@ import { StyleSheet, Platform, Text } from 'react-native'
 import defaultStyles from '../config/styles'
 interface Props extends PropsWithChildren {
 	style?: { [key: string]: any }
+	[x: string]: any
 }
 
-const AppText: React.FC<Props> = ({ children, style }) => {
-	return <Text style={[styles.text, style]}>{children}</Text>
+const AppText: React.FC<Props> = ({ children, style, ...rest }) => {
+	return (
+		<Text style={[styles.text, style]} {...rest}>
+			{children}
+		</Text>
+	)
 }
 
 // 1. Lot of duplication for platform specific code

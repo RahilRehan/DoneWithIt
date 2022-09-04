@@ -3,7 +3,13 @@ import React from 'react'
 import AppPicker from '../AppPicker'
 import ErrorMessage from './ErrorMessage'
 
-const AppFormPicker = ({ items, name, placeholder }) => {
+interface Props {
+	items: { [key: string]: any }
+	name: string
+	placeholder: string
+}
+
+const AppFormPicker: React.FC<Props> = ({ items, name, placeholder }) => {
 	const { errors, setFieldValue, touched, values } = useFormikContext()
 
 	return (

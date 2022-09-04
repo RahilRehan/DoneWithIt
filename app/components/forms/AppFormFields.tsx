@@ -6,10 +6,11 @@ import ErrorMessage from './ErrorMessage'
 
 interface Props {
 	name: string
+	width?: number
 	[x: string]: any
 }
 
-const AppFormFields: React.FC<Props> = ({ name, ...rest }) => {
+const AppFormFields: React.FC<Props> = ({ name, width, ...rest }) => {
 	const { handleChange, errors, setFieldTouched, touched } =
 		useFormikContext()
 
@@ -18,6 +19,7 @@ const AppFormFields: React.FC<Props> = ({ name, ...rest }) => {
 			<AppTextInput
 				onBlur={() => setFieldTouched(name)}
 				onChangeText={handleChange(name)}
+				width={width}
 				{...rest}
 			/>
 			<ErrorMessage error={errors[name]} visible={touched[name]} />

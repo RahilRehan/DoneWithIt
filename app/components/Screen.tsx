@@ -9,7 +9,7 @@ interface Props extends PropsWithChildren {
 const Screen: React.FC<Props> = ({ children, style }) => {
 	return (
 		<SafeAreaView style={[styles.screen, style]}>
-			<View style={style}>{children}</View>
+			<View style={[styles.view, style]}>{children}</View>
 		</SafeAreaView>
 	)
 }
@@ -17,6 +17,9 @@ const Screen: React.FC<Props> = ({ children, style }) => {
 const styles = StyleSheet.create({
 	screen: {
 		paddingTop: Constants.statusBarHeight,
+		flex: 1,
+	},
+	view: {
 		flex: 1,
 	},
 })

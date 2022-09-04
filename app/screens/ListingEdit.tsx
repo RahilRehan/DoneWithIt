@@ -42,6 +42,7 @@ const ListingEdit = () => {
 					maxLength={8}
 					placeholder="Price"
 					keyboardType="numeric"
+					width={120}
 				/>
 				<AppFormPicker
 					items={catergories}
