@@ -2,23 +2,23 @@ import React from 'react'
 import { TouchableOpacity, StyleSheet } from 'react-native'
 import AppText from './AppText'
 
-interface Props{
-    label: string
-    onPress: () => void
+interface Props {
+	onPress: () => void
+	item: { [key: string]: any }
 }
 
-const PickerItem: React.FC<Props> = ({label, onPress}) => {
-    return (
-        <TouchableOpacity onPress={onPress} style={styles.text}>
-            <AppText>{label}</AppText>
-        </TouchableOpacity>
-    )
+const PickerItem: React.FC<Props> = ({ item, onPress }) => {
+	return (
+		<TouchableOpacity onPress={onPress} style={styles.text}>
+			<AppText>{item.label}</AppText>
+		</TouchableOpacity>
+	)
 }
 
-const  styles = StyleSheet.create({
-    text: {
-        padding: 20
-    }
+const styles = StyleSheet.create({
+	text: {
+		padding: 20,
+	},
 })
 
 export default PickerItem

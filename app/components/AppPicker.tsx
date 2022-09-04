@@ -11,7 +11,9 @@ import { categoryType } from '../../App'
 interface Props {
 	icon?: any
 	[x: string]: any
+	numColumns: number
 	placeholder: string
+	PickerItemComponent: React.FC
 	selectedItem: categoryType
 	onSelectItem: (item: any) => void
 }
@@ -19,7 +21,9 @@ interface Props {
 const AppPicker: React.FC<Props> = ({
 	icon,
 	items,
+	numColumns = 1,
 	placeholder,
+	PickerItemComponent = PickerItem,
 	selectedItem,
 	onSelectItem,
 }) => {
@@ -63,10 +67,11 @@ const AppPicker: React.FC<Props> = ({
 					/>
 					<FlatList
 						data={items}
+						numColumns={numColumns}
 						keyExtractor={(item) => item.value.toString()}
 						renderItem={({ item }) => (
-							<PickerItem
-								label={item.label}
+							<PickerItemComponent
+								item={item}
 								onPress={() => {
 									onSelectItem(item)
 									setModalVisible(false)
